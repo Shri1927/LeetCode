@@ -51,14 +51,33 @@ public class day_01_string {
         //     System.out.println(choice[i]);
         // }
 
-        String email1 = "shri@gmail.com";
-        String email2 = "shri@hotmail.com";
+        // String email1 = "shri@gmail.com";
+        // String email2 = "shri@hotmail.com";
 
-        String emailArr[] = email1.split("@");
-        String lastpart = emailArr[emailArr.length-1];
-        int dotIndex = lastpart.lastIndexOf(".");
+        // String emailArr[] = email1.split("@");
+        // String lastpart = emailArr[emailArr.length-1];
+        // int dotIndex = lastpart.lastIndexOf(".");
 
-        System.out.println(lastpart.substring(0, dotIndex));
+        // System.out.println(lastpart.substring(0, dotIndex));
+
+        
+        StringBuilder name1 = new StringBuilder("Shri");
+        StringBuilder name2 = new StringBuilder("Shri");
+        StringBuilder name3 = new StringBuilder("Shri");
+        StringBuilder name4 = name1;
+
+        name4.append("Bidave");
+
+        // System.out.println(name1.equals(name2));
+        // System.out.println(name2.equals(name3));
+        // System.out.println(name3.equals(name4));
+        // System.out.println(name4.equals(name1));
+
+        System.out.println(name1 == name2);
+        System.out.println(name2 == name3);
+        System.out.println(name3 == name4);
+        System.out.println(name1 == name4);
+
 
 
     }
