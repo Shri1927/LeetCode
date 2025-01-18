@@ -49,6 +49,8 @@
 
 //  Programs 
 
+import java.util.Vector;
+
 public class day_02_string {
 
     static void printSubStrings(String str){
@@ -84,23 +86,182 @@ public class day_02_string {
 
         // Method 4
 
-        StringBuilder ans = new StringBuilder(str);
-        int n = ans.length();
+        // StringBuilder ans = new StringBuilder(str);
+        // int n = ans.length();
 
-        for(int i=0; i<n/2; i++){
+        // for(int i=0; i<n/2; i++){
 
-            char firstChar = ans.charAt(i);
-            char lastChar = ans.charAt(n-1-i);
-            ans.setCharAt(i, lastChar);
-            ans.setCharAt(n-1-i, firstChar);
-        }
+        //     char firstChar = ans.charAt(i);
+        //     char lastChar = ans.charAt(n-1-i);
+        //     ans.setCharAt(i, lastChar);
+        //     ans.setCharAt(n-1-i, firstChar);
+        // }
 
-        System.out.println(ans.toString());
-
+        // System.out.println(ans.toString());
 
     }
+
+    public static boolean isPalindromeString(String str){
+
+        // Method 1 - Using StringBuilder 
+        // StringBuilder revStr = new StringBuilder(str);
+        // String newStr = revStr.reverse().toString();
+        // if(str.equals(newStr)){
+        //     System.out.println("Yes. it is");
+        // }else{
+        //     System.err.println("It's Not");
+        // }
+
+        // Method 2 - Using Concatatiation
+        // String newStr = "";
+        // for(int i=0; i<str.length(); i++){
+        //     newStr = str.charAt(i) + newStr;
+        // }
+
+        // if(str.equals(newStr)){
+        //     System.out.println("true");
+        // }else{
+        //     System.out.println("false");
+        // }
+
+        int st = 0;
+        int end = str.length() - 1;
+
+        while (st < end) {
+            if(str.charAt(st) != str.charAt(end)){
+                return false;
+            }
+
+            st++;
+            end--;
+        }
+
+        return true;
+
+    }
+
+    static String reverseWord(String str){
+       
+        String [] words = str.split(" ");
+        String result="";
+        for(int i=0; i<words.length; i++){
+ 
+            if(words[i].length() == 0){
+                continue;
+            }
+
+            if(result.length() == 0){
+                result += words[i];
+            }else{
+                result += " " + words[i];
+            }
+
+        }
+        return result;
+    }
+
+    static void reverse(String str){
+        String [] words = str.split(" ");
+        String result="";
+        for(int i=words.length-1; i>=0; i--){
+            if(words[i].length() == 0){
+                continue;
+            }
+            if(result.length() == 0){
+                result += words[i];
+            }else{
+                result += " " + words[i];
+            }
+        }
+
+        StringBuilder revStr = new StringBuilder(result);
+        String newStr = revStr.reverse().toString();
+        System.out.println(newStr+"*");
+    }
+
+
+// Optimal Sol : 
+    // public String reverseWords(String s) {
+    //     String [] words = s.split(" ");
+    //     // String result="";
+    //     StringBuilder result = new StringBuilder();
+    //     for(int i=words.length-1; i>=0; i--){
+    //         if(words[i].length() == 0){
+    //             continue;
+    //         }
+    //         if(result.length() == 0){
+    //             result.append(words[i]);
+    //         }else{
+    //             result.append(" ");
+    //             result.append(words[i]);
+    //         }
+    //     }
+    //     return result.reverse().toString();
+    // }
+    
+
+    static void wordrev(String s){
+        // String [] words = s.split(" ");
+        StringBuilder result = new StringBuilder();
+        int si = s.length()-1;
+        while(si >= 0){
+            while( si >= 0 && s.charAt(si) == ' '){
+                si--;
+            }
+            if(si < 0){
+                break;
+            }
+            int ei = si;
+            while( si >= 0 && s.charAt(si) != ' '){
+                si--;
+            }
+            if(result.length() == 0){
+                result.append(s.substring(si+1, ei+1));
+            }else{
+                result.append(" ");
+                result.append(s.substring(si+1, ei+1));
+            }
+
+        }
+    }
+
+    static void isAnagram(String s, String t) {
+
+        if(s.length() != t.length()){
+            System.out.println("false");
+            return;
+        }
+       
+        int freq[] = new int[26];
+        int indexS = 0;
+        int indexT = 0;
+        int len = s.length();
+        while(indexS < len && indexT < len){
+            
+            int freqChars = s.charAt(indexS) - 97;
+            freq[freqChars] += 1;
+
+            int freqCharT = t.charAt(indexT) - 97;
+            freq[freqCharT] -= 1;
+            
+            indexS++;
+            indexT++;
+
+        }
+
+        for(int i=0; i<freq.length; i++){
+            if(freq[i] != 0){
+                System.out.println("false");
+                return;
+            }
+        }
+        
+        System.out.println("true");
+    }
+    
     public static void main(String[] args) {
-        String str = "abc";
-        reverseString(str);   
+        String str1 = "abcd";
+        String str2 = "acbd";
+        isAnagram(str2 , str1);  
     }
 }

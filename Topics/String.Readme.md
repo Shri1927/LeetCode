@@ -4,7 +4,7 @@
    - Strings are immutable, meaning they cannot be changed after they are created.
    - Strings can be concatenated using the + operator.
    - Strings are class in java.
-   - In array we are able to pass the values by referencing to another variable but in string we are not able to pass the values by       referencing to another variable.
+   - In array we are able to pass the values by referencing to another variable but in string we are not able to pass the values by referencing to another variable.
    - Rather than referencing it creates a new space in memory and copies the values from the original string to the new string.
    - SCP : https://app.eraser.io/workspace/feCi9zjkiFvu6coPn0p8
 
@@ -37,5 +37,5 @@ System.out.println(s1 == s3); // true, as they refer to the same object
 // Using .equals()
 System.out.println(s1.equals(s2)); // true, as their contents are identical
 
-----------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
 
