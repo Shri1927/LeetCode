@@ -258,10 +258,22 @@ public class day_02_string {
         
         System.out.println("true");
     }
+
+    static void rev(char s[]){
+        int si = 0;
+        int ei = s.length-1;
+        while(si < ei){
+            char temp = s[si];
+            s[si] = s[ei];
+            s[ei] = temp;
+            si++;
+            ei--;
+        }
+        System.out.println(s);
+    }
     
     public static void main(String[] args) {
-        String str1 = "abcd";
-        String str2 = "acbd";
-        isAnagram(str2 , str1);  
+        char s[] = {'h', 'e', 'l', 'l', 'o'};
+        rev(s);
     }
 }

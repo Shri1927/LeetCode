@@ -153,3 +153,13 @@ This document summarizes the key points from the video "[L-16 Array: The first d
 This lecture provides a comprehensive understanding of arrays in Java, beneficial for those preparing for technical interviews, particularly with FAANG companies.
 
 For a detailed walkthrough and code examples, watch the full video here: [L-16 Array: The first data structure | Array in one shot | Java plus DSA | shashwat | FAANG](https://www.youtube.com/watch?v=TsoTexsJWlI)
+
+## Interview Questions and Answers
+
+### Question 1: What is an array?
+**Answer:** An array is a data structure that stores a fixed-size sequential collection of elements of the same type. It is used to store multiple values in a single variable.
+
+### Question 2: How do you declare an array in Java?
+**Answer:** An array in Java can be declared as follows:
+```java
+int[] arr = new int[10]; // Declares an array of 10 integers
