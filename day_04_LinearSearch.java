@@ -93,24 +93,48 @@ public class day_04_LinearSearch {
             }
         }
     }
+
+    static void binarySearch(int arr[], int target){
+        int ans = -1;
+        int start = 0;
+        int end = arr.length - 1;
+        int mid = start + (end - start) / 2;
+        while (start <= end) {
+                if(arr[mid] == target){
+                    ans = mid;
+                }else if(arr[mid] < target){
+                    start = mid + 1;
+                }else{
+                    end = mid - 1;
+               }
+        }
+        
+        if(ans == -1){
+            System.out.println("Element is not present in array");
+        }else{
+            System.out.println("Element is present at index " + ans);
+        }
+    }
     public static void main(String[] args) {
-        // int[] arr = { 1, 2, 3, 2, 5,2,2,2,6,4,2,89,2};
+        // int[] arr = { 1, 2, 3,5,6,89};
         // // int target = 2;
         // // linearSearch(arr, target, false);
         // // linearSearch(arr, target, true);
         // // multOccurences(arr, target);
         // finndMax(arr);
         // finndMin(arr);
-
-        int arr[][] = {
-                { 1, 2, 3 },
-                { 4, 5, 6 },
-                { 5, 8, 5 }
-        };
+        
+        // int arr[][] = {
+        //         { 1, 2, 3 },
+        //         { 4, 5, 6 },
+        //         { 5, 8, 5 }
+        // };
 
         // linearSearch2D(arr, 5, false);
         // linearSearch2D(arr, 5, true);
         // mulOccurences2D(arr, 5);
         // findMaxSumSubarr(arr);
+
+        // binarySearch(arr, 5);
     }
 }
