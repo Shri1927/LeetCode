@@ -1,4 +1,4 @@
-public class day_06_BS {
+public class day_06_infiniteAarBS {
     
     static void findMinAbsDiff(int arr[], int target){
         int ans = -1;

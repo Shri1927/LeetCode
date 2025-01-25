@@ -1,19 +1,20 @@
-public class day_05_BinarySearch {
+// public class day_05_BinarySearch {
 
-    public static void main(String[] args) {
-        // int arr[] = {23,21,11,10,8,4,1};
-        // int arr1[] = {1,2,3,4,5,6};
-        int arr2[] = {4,4,8,8,8,15,16,23};
-        // int first = firsOccurence(arr2, 8 , true);
-        // int last = firsOccurence(arr2, 8  , false);
-        // // int result1 = oabs(arr1, 44);
-        // // int result2 = oabs(arr2, 11);
-        // System.out.println(first);
-        // System.out.println(last);
-        // System.out.println("***********");
-        // int ans = (last - first) + 1;
-        // System.out.println(ans);
-        int ansF = binSearchFloor(arr2, 1);        public class day_05_BinarySearch {
+//     public static void main(String[] args) {
+//         // int arr[] = {23,21,11,10,8,4,1};
+//         // int arr1[] = {1,2,3,4,5,6};
+//         int arr2[] = {4,4,8,8,8,15,16,23};
+//         // int first = firsOccurence(arr2, 8 , true);
+//         // int last = firsOccurence(arr2, 8  , false);
+//         // // int result1 = oabs(arr1, 44);
+//         // // int result2 = oabs(arr2, 11);
+//         // System.out.println(first);
+//         // System.out.println(last);
+//         // System.out.println("***********");
+//         // int ans = (last - first) + 1;
+//         // System.out.println(ans);
+//         int ansF = binSearchFloor(arr2, 1);      
+          public class day_05_BinarySearch {
         
             public static void main(String[] args) {
                 // int arr[] = {23,21,11,10,8,4,1}; // Example array in descending order
@@ -125,12 +126,7 @@ public class day_05_BinarySearch {
                 return -1; // Return -1 if target is not found
             }
         }
-        System.out.println(ansF);
-        int ansC = binSearchCeiling(arr2, 30);
-        System.out.println(ansC);
-
-    }
-
+    
     // static int binSearchFloor(int arr[], int target){
         
     //     int ans = -1;
