@@ -75,7 +75,7 @@ public class MinimumPagesAllocation {
     // Koko eating Bananas
     static int minEatingSpeed(int[] piles, int h) {
         int ans = -1;
-        int start = 0;
+        int start = 1;
         int end = Integer.MIN_VALUE;
 
         for(int i=0; i<piles.length; i++){
@@ -113,5 +113,6 @@ public class MinimumPagesAllocation {
         int arr[] = {1,2,3,4,5,6,7,8,9,10};
         int res = dailyShipment (arr, 5);
         System.out.println(res);
+        System.out.println("ans "+2/6);
     }
 }
