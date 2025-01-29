@@ -76,3 +76,9 @@ def search_bitonic(arr, target):
 ## Conclusion
 
 Bitonic arrays have unique properties that allow for efficient searching and peak finding using modified binary search algorithms. Understanding these properties and algorithms can help solve related problems effectively.
+
+
+[1,2,6,8,9]
+[3,4,7,11]
+k=5
+
