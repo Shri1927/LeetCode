@@ -5,3 +5,11 @@
 ## Find Smallest Letter Greater Than Target
 
    https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/
+
+## Binary Search
+
+    https://leetcode.com/problems/binary-search/description/
+
+## Search insert position
+
+    https://leetcode.com/problems/search-insert-position/description/
