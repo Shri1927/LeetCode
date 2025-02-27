@@ -1,4 +1,4 @@
-public class medianOfSortedMatrix {
+ class medianOfSortedMatrix {
 
     int median(int mat[][]) {
         int R = mat.length; // Number of rows in the matrix
