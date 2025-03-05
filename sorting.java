@@ -3,8 +3,8 @@ public class sorting {
     public static void main(String[] args) {
         int arr[] = {2,7,1,5,4,6,3,0};
         printArray(arr,"original array");
-        brickSort(arr);
-        printArray(arr,"sorted array");
+        int res[] = countingSort(arr);
+        printArray(res,"sorted array");
     }
 
     public static void printArray(int arr[], String msg) {
@@ -118,6 +118,46 @@ public class sorting {
                 isSorted = true;
             }
         }
+    }
+
+    public static int[] countingSort(int arr[]){
+        // find k
+        int k = Integer.MIN_VALUE;
+        int n = arr.length;
+        int sortedArr[] = new int[n];
+
+        for(int i=0;i<n;i++){
+           if(arr[i] > k){
+             k = arr[i];
+           }
+        }
+
+        if(k == Integer.MIN_VALUE){
+            System.out.println("Empty Value");
+            return sortedArr;
+        }
+
+        // counting Frequency
+        int count[] = new int[k+1];
+        for(int i=0; i<n; i++){
+            int idx = arr[i];
+            count[idx]+=1;
+        }
+
+        // updating frequency
+        for(int i=1; i<=k; i++){
+            count[i]+=count[i-1];
+        }
+
+        // Arranging
+        for(int i=n-1; i>=0; i--){
+            int val = arr[i];
+            int countVal = --count[val];
+            sortedArr[countVal] = val;
+
+        }
+
+        return sortedArr;
     }
 
     public static void swap(int arr[], int index1, int index2) {
