@@ -1,10 +1,10 @@
 public class sorting {
     
     public static void main(String[] args) {
-        int arr[] = {2,7,1,5,4,6,3,0};
+        int arr[] = {2,7,1,5,4,6,3};
         printArray(arr,"original array");
-        int res[] = countingSort(arr);
-        printArray(res,"sorted array");
+        CycleSort(arr);
+        printArray(arr,"sorted array");
     }
 
     public static void printArray(int arr[], String msg) {
@@ -158,6 +158,21 @@ public class sorting {
         }
 
         return sortedArr;
+    }
+
+    static void CycleSort(int arr[]){
+
+        int n = arr.length;
+        int index=0;
+        while(index<n){
+            int actualPos = arr[index]-1;
+            if(arr[index]<n && arr[index] != arr[actualPos]-1){
+                swap(arr,index,actualPos);
+            }else{
+                index++;
+            }
+        }
+        
     }
 
     public static void swap(int arr[], int index1, int index2) {
