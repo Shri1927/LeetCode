@@ -14,8 +14,9 @@ public class missingnumber {
         
     }
 
+
     public static void main(String[] args) {
-        int arr[] = {0,1,3};
+        int arr[] = {1,2,3,};
         int res = missingNumber(arr);
         System.out.println(res);
     }
