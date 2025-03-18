@@ -85,6 +85,42 @@ public class Mystack {
     }
 
 
+    int countRev (String s)
+    {
+        // your code here   
+        if(s.length()%2 != 0){
+            return -1;
+        }
+        
+        Stack<Character> stack = new Stack<>();
+        for(int i=0; i<s.length(); i++){
+            char ch = s.charAt(i);
+            if(ch == '{'){
+                stack.push(ch);
+            }else{
+                if(stack.isEmpty() || stack.peek() == '}'){
+                    stack.push(ch);
+                }else{
+                    stack.pop();
+                }
+            }
+        }
+        
+        int open=0,close=0;
+        while(!stack.isEmpty()){
+            char top = stack.pop();
+            if(top == '{'){
+                open++;
+            }else{
+                close++;
+            }
+        }
+        
+       int ans = (int) (Math.ceil(open / 2.0) + Math.ceil(close / 2.0));
+        return ans;
+    }
+
+
     public static void main(String[] args) {
         int n = 5;
         Mystack stack = new Mystack(n);
