@@ -58,21 +58,24 @@ public class longestValidParenthesis {
 
     static int longestValid(String str){
 
-        Stack<Integer> st = new Stack<>();
-        st.push(-1);
+        // Stack<Integer> st = new Stack<>();
+
+        int stack[] = new int[str.length()+1];
+        int index = -1;
+        stack[++index] = -1;
         int max = 0;
         for(int i=0; i<str.length(); i++){
             char ch = str.charAt(i);
             if(ch == '('){
-                st.push(i);
+                stack[++index] = i;
             }else{
-                st.pop();
-                if(st.isEmpty()){
-                    st.push(i);
+                index--;
+                if(index == -1){
+                    stack[++index] = i;
                 }
             }
 
-            max = Math.max(max, i-st.peek());
+            max = Math.max(max, i-stack[index]);
         }
 
         return max;

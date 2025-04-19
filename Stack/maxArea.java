@@ -3,28 +3,28 @@ package Stack;
 public class maxArea {
     
    static int maximalRectangle(char[][] arr){
-      if(arr.length == 0){
-        return -1;
-      }
+        if(arr.length == 0){
+            return -1;
+        }
 
-      int heights[] = new int[arr[0].length];
-      int largest = 0;
-      for(int i=0; i<arr.length; i++){
-        for(int j=0; j<arr[i].length; j++){
-            if(arr[i][j] == 0){
-                heights[j] = 0;
-            }else{
-                heights[j] +=( arr[i][j] - '0');
+        int heights[] = new int[arr[0].length];
+        int largest = 0;
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr[i].length; j++){
+                if(arr[i][j] == 0){
+                    heights[j] = 0;
+                }else{
+                    heights[j] +=( arr[i][j] - '0');
+                }
             }
-        }
-        int maxArea = largestRectangle1(heights);
-        if(maxArea > largest){
-            largest = maxArea;
+            int maxArea = largestRectangle1(heights);
+            if(maxArea > largest){
+                largest = maxArea;
+            }
+
         }
 
-      }
-
-      return largest;
+        return largest;
    }
 
     static int largestRectangle1(int arr[]){
